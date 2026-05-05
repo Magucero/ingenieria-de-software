@@ -2,10 +2,15 @@
 
 {%block body%}
 <ul>
+    <h3>Listado de tareas</h3>
+    <a href="{% url 'crear_tarea' %}">nueva tarea</a>
+    
 
     {% for tarea in tareas %}
     <li>{{ tarea.nombre }}, {{tarea.completada}}</li>
-    <li>{{ tarea.responsable.username}}, {{tarea.etiquetas}}</li>
+    <a href="{% url 'editar' tarea.id %}">editar</a>
+    <a href="{% url 'borrar' tarea.id %}">Borrar</a>
+    <!-- <li>{{ tarea.responsable.username}}, {{tarea.etiquetas}}</li> -->
     <hr>
     {% endfor %}
 </ul>

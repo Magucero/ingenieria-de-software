@@ -1,0 +1,19 @@
+{% extends 'saludo/base.html'%}
+
+{%block body%}
+
+<h1>borrartarea</h1>
+<form method="post">
+
+    {% csrf_token %}
+    <div> Estas seguro ??</div>
+    <h3>
+        {{ tarea }}
+    </h3>
+
+    <button type="submit"> save</button>
+    <a href="{% url 'tareas'%}">No,volver</a>
+</form>
+
+
+{%endblock%}
